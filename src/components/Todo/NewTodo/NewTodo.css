@@ -1,0 +1,14 @@
+.new-todo  {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #c3c3c3;
+  width: 700px;
+}
+
+.new-todo h2 {
+  font-weight: 400;
+}
