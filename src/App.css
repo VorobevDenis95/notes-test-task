@@ -7,3 +7,14 @@
 body {
   background-color: #faf5f5;
 }
+
+.todo-textarea {
+  border: none;
+  width: 100%;
+  resize: none;
+  padding: 5px;
+}
+
+.todo-textarea:focus, .todo-textarea:active {
+  outline: none;
+}

@@ -14,4 +14,7 @@ interface TodoListProps {
   todos: Todo[]
 }
 
-export type {Todo, TodoItemProps, TodoListProps}
+
+export type {
+  Todo, TodoItemProps, TodoListProps
+}

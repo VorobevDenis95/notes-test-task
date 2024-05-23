@@ -1,4 +1,4 @@
-.todo {
+.todo-item {
   border: 1px solid #c3c3c3;
   border-radius: 8px;
   min-height: 200px;
@@ -6,6 +6,6 @@
   background-color: #fff;
 }
 
-.todo:hover {
+.todo-item:hover {
   box-shadow: 1px 3px 5px #c3c3c3;
 }

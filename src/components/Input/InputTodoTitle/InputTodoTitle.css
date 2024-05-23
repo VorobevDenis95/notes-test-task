@@ -1,0 +1,8 @@
+.todo-title-input textarea {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.todo-title-input textarea:focus, textarea:active {
+  outline: none;
+}
