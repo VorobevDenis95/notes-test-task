@@ -1,12 +1,16 @@
 import { TodoItemProps } from "../../../shared/types/typesTodo";
+import Toolbar from "../Toolbar/Toolbar";
 import './TodoItem.css'
 
 const TodoItem = ({item} : TodoItemProps) => {
 
   return (
       <div className="todo-item">
-        {item.title && <h2>{item.title}</h2>}
-        {item.description && <p>{item.description}</p>}
+        <div>
+          {item.title && <h2>{item.title}</h2>}
+          {item.description && <p>{item.description}</p>}
+        </div>
+        <Toolbar id={item.id} />
       </div>
     )
 }

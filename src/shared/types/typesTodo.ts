@@ -1,6 +1,6 @@
 interface Todo {
-  id: number,
-  date: Date,
+  id: string,
+  date: string,
   title?: string,
   description?: string,
   completed: boolean

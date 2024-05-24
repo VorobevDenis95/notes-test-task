@@ -2,10 +2,14 @@ import InputTodoDescription from '../../Input/InputTodoDescription/InputTodoDesc
 import InputTodoTitle from '../../Input/InputTodoTitle/InputTodoTitle';
 import './NewTodo.css';
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { createTodo } from './utils';
+import { useAppDispatch } from '../../../shared/redux/redux-hooks';
+import { addTodo } from '../../../shared/redux/slice/todoSlice';
 
 const NewTodo = () => {
 
   const [isActive, setIsActive] = useState(false);
+  const [isSend, setSend] = useState(false);
 
   const [titleValue, setTitleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
@@ -15,6 +19,7 @@ const NewTodo = () => {
   }
 
   const todoRef = useRef<HTMLDivElement>(null);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (isActive) {
@@ -27,6 +32,14 @@ const NewTodo = () => {
   }, [isActive]);
 
 
+  useEffect(() => {
+    if (isSend) {
+      sendTodo();
+      setSend(false);
+    }
+  }, [isSend]);
+
+
   const handleChangeDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setDescriptionValue(e.target.value);
   }
@@ -36,7 +49,17 @@ const NewTodo = () => {
 
   const handlerOutsideClick = (e: MouseEvent) => {
     if (todoRef.current && !todoRef.current.contains(e.target as Node) && isActive) {
+      setSend(true);
       setIsActive(false);
+    }
+  }
+
+  const sendTodo = () => {
+    if (titleValue || descriptionValue) {
+      const todo = createTodo(titleValue, descriptionValue); 
+      setTitleValue('');
+      setDescriptionValue('');
+      dispatch(addTodo(todo));
     }
   }
 
