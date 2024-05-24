@@ -2,15 +2,11 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import InputTodoDescription from "../Input/InputTodoDescription/InputTodoDescription";
 import InputTodoTitle from "../Input/InputTodoTitle/InputTodoTitle";
 import { useAppDispatch } from "../../shared/redux/redux-hooks";
-import { editTodo } from "../../shared/redux/slice/todoSlice";
+import { clearModal, editTodo } from "../../shared/redux/slice/todoSlice";
+import './EditTodo.css';
+import { EditTodoProps } from "../../shared/types/typesTodo";
 
-interface EditTodoProps {
-  title: string;
-  description: string;
-  id: string
-}
-
-const EditTodo = ({title, description, id} : EditTodoProps) => {
+const EditTodo = ({ title, description, id }: EditTodoProps) => {
 
   const [valueTitle, setValueTitle] = useState(title);
   const [valueDescription, setValueDescription] = useState(description);
@@ -38,17 +34,24 @@ const EditTodo = ({title, description, id} : EditTodoProps) => {
       title: valueTitle,
       description: valueDescription
     }))
-    
   }
 
+  const closeModal = () => {
+    dispatch(clearModal());
+  }
 
   return (
     <div className="modal">
-      <form className="modal__container">
-        <InputTodoTitle value={valueTitle} changeInput={handleChangeTodoTitle}/>
-        <InputTodoDescription value={valueDescription} changeInput={handleChangeDescription}/>
-        <button>Отмена</button>
-        <button type="submit">Сохранить</button>
+      <form onSubmit={handleSubmit} 
+      className="modal__container">
+        <div>
+          <InputTodoTitle value={valueTitle} changeInput={handleChangeTodoTitle} />
+          <InputTodoDescription value={valueDescription} changeInput={handleChangeDescription} />
+        </div>
+        <div className="modal__container-btn">
+          <button className="toolbar-button" onClick={closeModal}>Отмена</button>
+          <button className="toolbar-button" type="submit">Сохранить</button>
+        </div>
       </form>
     </div>
   )

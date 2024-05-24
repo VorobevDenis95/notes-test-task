@@ -1,0 +1,13 @@
+.footer {
+  background-color: #9b6020;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-container {
+  min-height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

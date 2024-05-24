@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: EBGaramond;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 body {
@@ -17,4 +24,26 @@ body {
 
 .todo-textarea:focus, .todo-textarea:active {
   outline: none;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #faf5f5;
+  color: #ababab;
+}
+
+@font-face {
+  font-family: EBGaramond;
+  src: url('./assets//fonts/EBGaramond-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: EBGaramond;
+  src: url('./assets//fonts/EBGaramond-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
 }

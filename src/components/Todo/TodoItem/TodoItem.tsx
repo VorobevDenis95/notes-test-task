@@ -8,7 +8,7 @@ const TodoItem = ({item} : TodoItemProps) => {
       <div className="todo-item">
         <div>
           {item.title && <h2>{item.title}</h2>}
-          {item.description && <p>{item.description}</p>}
+          {item.description && <pre >{item.description}</pre>}
         </div>
         <Toolbar id={item.id} />
       </div>

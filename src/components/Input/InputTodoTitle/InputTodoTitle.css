@@ -1,4 +1,6 @@
 .todo-title-input textarea {
+  /* min-height: 25px; */
+  overflow: hidden;
   font-size: 22px;
   font-weight: 600;
 }

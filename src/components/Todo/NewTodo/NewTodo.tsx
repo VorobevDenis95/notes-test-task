@@ -29,6 +29,7 @@ const NewTodo = () => {
       document.removeEventListener("mousedown", handlerOutsideClick);
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
 
@@ -37,6 +38,7 @@ const NewTodo = () => {
       sendTodo();
       setSend(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSend]);
 
 
@@ -55,12 +57,12 @@ const NewTodo = () => {
   }
 
   const sendTodo = () => {
-    if (titleValue || descriptionValue) {
-      const todo = createTodo(titleValue, descriptionValue); 
-      setTitleValue('');
-      setDescriptionValue('');
+    if (titleValue.trim() || descriptionValue.trim()) {
+      const todo = createTodo(titleValue, descriptionValue);
       dispatch(addTodo(todo));
     }
+    titleValue && setTitleValue('');
+    descriptionValue && setDescriptionValue('');
   }
 
   return (

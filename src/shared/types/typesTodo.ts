@@ -14,7 +14,14 @@ interface TodoListProps {
   todos: Todo[]
 }
 
+interface EditTodoProps {
+  title: string;
+  description: string;
+  id: string
+}
 
 export type {
-  Todo, TodoItemProps, TodoListProps
+  Todo, TodoItemProps, TodoListProps,
+  EditTodoProps,
 }
+

@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  height: 50px;
+  padding: 0 40px;
+  background-color: #9b6020;
+  color: #fff;
+  /* padding: 10%; */
+}
+
+.header__link {
+  color: #fff;
+  text-decoration: none;
+}

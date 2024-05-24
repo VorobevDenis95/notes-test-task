@@ -9,9 +9,9 @@
   min-height: 200px;
   width: 300px;
   background-color: #fff;
+  word-wrap: break-word;
 }
 
 .todo-item:hover {
   box-shadow: 1px 3px 5px #c3c3c3;
 }
-
